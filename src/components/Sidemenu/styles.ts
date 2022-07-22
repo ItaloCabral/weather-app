@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
-export const SideContainer = styled.div`
+export const SideContainer = styled.div<{ show: boolean }>`
   width: 40%;
   height: 100%;
   background-color: #28413e33;
   backdrop-filter: blur(10px);
   position: absolute;
   top: 0;
-  right: 0;
+  right: ${props => (props.show ? "0" : "-40%")};
   z-index: 1;
   padding: 36px;
   font-size: 1.6rem;
   color: #aaa;
+  transition: all 0.3s ease-in-out;
 `;
 
 export const InputGroup = styled.div`

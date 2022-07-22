@@ -23,6 +23,7 @@ export const Logo = styled.div`
 export const Content = styled.div`
   display: flex;
   margin-bottom: 3.6rem;
+  font-size: 1.6rem;
 
   .degrees {
     font-size: 12rem;
@@ -32,7 +33,6 @@ export const Content = styled.div`
   }
 
   .location {
-    font-size: 1.6rem;
     display: flex;
     flex-direction: column;
     justify-content: end;
