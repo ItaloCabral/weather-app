@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import { FiSearch } from "react-icons/fi";
 import { SideContainer, InputGroup, Input, Button, RecentSearches, Content } from "./styles";
+
+import { WeatherContext } from "contexts/WeatherContext";
 
 interface Props {
   show: boolean;
 }
 
 export const Sidemenu: React.FC<Props> = ({ show }) => {
+  const { weather } = useContext(WeatherContext);
+
   return (
     <SideContainer show={show} >
       <InputGroup>
@@ -26,19 +31,19 @@ export const Sidemenu: React.FC<Props> = ({ show }) => {
         <div className="details">
           <div className="value">
             <span>Cloudy</span>
-            <span>86%</span>
+            <span>{weather?.clouds.all}%</span>
           </div>
           <div className="value">
             <span>Humidity</span>
-            <span>62%</span>
+            <span>{weather?.main.humidity}%</span>
           </div>
           <div className="value">
             <span>Wind</span>
-            <span>12km/h</span>
+            <span>{weather?.wind.speed}km/h</span>
           </div>
           <div className="value">
             <span>Rain</span>
-            <span>8mm</span>
+            <span>mm</span>
           </div>
         </div>
       </Content>
