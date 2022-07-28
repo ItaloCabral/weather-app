@@ -1,9 +1,9 @@
+import { TWeatherResponse } from 'providers/IWeatherProvider';
 import React, { createContext } from 'react';
-import { TWeatherResponse } from 'services/Weather';
 
 type WeatherContextProps = {
     weather: TWeatherResponse | null;
-    setWeatherState: React.Dispatch<React.SetStateAction<TWeatherResponse>>;
+    setWeatherState: React.Dispatch<React.SetStateAction<TWeatherResponse | null>>;
     eraseWeatherState: () => void;
 };
 
@@ -11,7 +11,7 @@ type WeatherProviderProps = {
     children?: React.ReactNode;
 };
 
-const DEFAULT_VALUE: WeatherContextProps = { 
+const DEFAULT_VALUE: WeatherContextProps = {
     weather: null,
     setWeatherState: () => {},
     eraseWeatherState: () => {},
