@@ -11,7 +11,7 @@ function App() {
 
   const [show, setShow] = useState(false);
   const toggleMenu = () => setShow(!show);
-  
+
   return (
     <Container>
       <GlobalStyle />
