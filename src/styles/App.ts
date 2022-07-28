@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const MenuToggle = styled.div<{isMenuOpen: boolean}>`
   position: absolute;
   top: 0;
-  right: ${props => (props.isMenuOpen ? "40%" : "0")};
+  right: ${props => (props.isMenuOpen ? "400px" : "0")};
   width: 56px;
   height: 56px;
   display: grid;
